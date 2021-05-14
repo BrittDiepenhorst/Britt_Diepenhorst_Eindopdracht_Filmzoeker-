@@ -4,6 +4,8 @@ const allMovies = document.getElementById("all-movies");
 // Functie om films aan de html toe te voegen
 const addMoviesToDom = (movies) => {
 
+    allMovies.querySelectorAll("*").forEach(n => n.remove());
+
     // Itereer over alle movies
     movies.forEach((movie) => {
 
@@ -89,7 +91,6 @@ addEventListeners(filmFilters);
 const filterMovies = (wordInMovieTitle) => {
     const filteredTitles = movies.filter((movie => movie.Title.includes(wordInMovieTitle)));
     console.log(filteredTitles);
-    allMovies.querySelectorAll("*").forEach(n => n.remove());
     addMoviesToDom(filteredTitles);
 };
 
@@ -97,7 +98,6 @@ const filterMovies = (wordInMovieTitle) => {
 const filterLatestMovies = () => {
     const filteredLatestMovies = movies.filter((movie => movie.Year >= 2014));
     console.log(filteredLatestMovies);
-    allMovies.querySelectorAll("*").forEach(n => n.remove());
     addMoviesToDom(filteredLatestMovies);
 };
 

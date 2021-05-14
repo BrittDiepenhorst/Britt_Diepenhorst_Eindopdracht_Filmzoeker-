@@ -22,3 +22,13 @@ body li {
     padding: 10px;
     list-style-type: none;
 }
+
+#searchWrapper {
+    padding-top: 20px;
+}
+
+#searchBar {
+    width: 50%;
+    height: 20px;
+    text-align: center;
+}

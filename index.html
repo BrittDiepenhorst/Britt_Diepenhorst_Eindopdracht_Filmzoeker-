@@ -6,12 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Eindopdracht Filmzoeker</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
     <script defer type="text/javascript" src="movies.js"></script>
     <script defer type="text/javascript" src="script.js"></script>
 </head>
 
+<header>
+    <h1>Welkom bij de Winc Filmzoeker</h1>
+</header>
+
 <body>
-    <nav>
+    <nav class="nav">
         <div>
             <input type="radio" id="categorie1" name="film-filter" value="laatste-films">
             <label for="categorie1">Laatste Films, 2014 of nieuwer</label>
@@ -29,8 +34,13 @@
             <label for="categorie5">Batman Films</label>
         </div>
 
+        <div id="searchWrapper">
+            <input type="text" id="searchBar" placeholder="Search..." name="searchBar">
+            <button type="sumbit">Submit</button>
+        </div>
+
     </nav>
-    <header></header>
+
     <main>
         <div class="container">
             <ul id="all-movies"></ul>

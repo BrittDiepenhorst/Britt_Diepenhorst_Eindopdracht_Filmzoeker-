@@ -1,28 +1,26 @@
 console.log(movies);
-const allMovies = document.getElementById("all-movies");
 
 // Functie om films aan de html toe te voegen
 const addMoviesToDom = (movies) => {
 
-    allMovies.querySelectorAll("*").forEach(n => n.remove());
+    const allMovies = document.getElementById("all-movies");
+    // allMovies.querySelectorAll("*").forEach(n => n.remove());
+    // minder zware manier om de lijst leeg te maken is:
+    allMovies.innerHTML = '';
 
     // Itereer over alle movies
     movies.forEach((movie) => {
 
-        // Nieuwe li aanmaken
         const movieItem = document.createElement("li");
 
         // img maken, src = movie.Poster
         const movieImg = document.createElement("img");
         movieImg.setAttribute('src', movie.Poster);
 
-        // ul waar de movies (li's) in worden gezet
-        const allMovies = document.getElementById("all-movies");
-
         // Listitem (li) vastmaken aan lijst (ul)
         allMovies.appendChild(movieItem);
 
-        // Link (a) vastamken aan listitem (li)
+        // Link (a) vastmaken aan listitem (li)
         const movieA = document.createElement("a");
         movieA.setAttribute('href', "https://www.imdb.com/title/" + movie.imdbID);
         movieA.setAttribute('target', "_blank");
@@ -31,7 +29,7 @@ const addMoviesToDom = (movies) => {
         // Image (img) vastmaken aan de link (a)
         movieA.appendChild(movieImg);
 
-    })
+    });
 };
 
 addMoviesToDom(movies);
@@ -79,10 +77,9 @@ const addEventListeners = (filmFilters) => {
                     console.log("Hey ik ben", message);
                     filterMovies("Batman");
                     break;
-            }
+            };
         }));
-
-    })
+    });
 };
 
 addEventListeners(filmFilters);
